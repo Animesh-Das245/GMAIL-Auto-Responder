@@ -25,8 +25,8 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/gmail-autoresponder.git
-    cd gmail-autoresponder
+    git clone https://github.com/Animesh-Das245/GMAIL-Auto-Responder.git
+    cd GMAIL-Auto-Responder
     ```
 
 2. **Install Dependencies:**
