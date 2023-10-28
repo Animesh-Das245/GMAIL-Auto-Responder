@@ -10,8 +10,6 @@ oauth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
 
-// ... rest of your code ...
-
-module.exports = { gmail, oauth2Client };  // Export oauth2Client as well
+module.exports = { gmail, oauth2Client };
 
 
