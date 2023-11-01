@@ -1,4 +1,3 @@
-// src/app.js
 const express = require('express');
 const dotenv = require('dotenv');
 const { emailProcessing } = require('./src/controllers/emailController');
