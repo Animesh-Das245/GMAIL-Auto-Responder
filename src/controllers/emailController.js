@@ -6,7 +6,7 @@ async function fetchUnrepliedEmails() {
     try {
       const response = await gmail.users.messages.list({
         userId: 'me',
-        q: 'is:unread -from:me -label:Replied',  // Exclude emails that have been labeled as 'Replied'
+        q: 'is:unread -from:me -label:Replied', 
       });
       const messages = response.data.messages || [];
       return messages;
@@ -47,7 +47,7 @@ function createReply(email) {
         'I am currently out of the office and will get back to you as soon as possible.',
     ];
     const message = messageParts.join('\n');
-    const encodedMessage = Buffer.from(message).toString('base64');  // Corrected line
+    const encodedMessage = Buffer.from(message).toString('base64');  
     return encodedMessage;
 }
 
@@ -71,7 +71,7 @@ async function labelAndOrganizeEmails(messageIds) {
 async function createOrGetLabel() {
     try {
       const { data } = await gmail.users.labels.list({ userId: 'me' });
-      let label = data.labels.find(label => label.name === 'Replied');  // Look for a 'Replied' label
+      let label = data.labels.find(label => label.name === 'Replied');
       if (!label) {
         const { data: newLabel } = await gmail.users.labels.create({
           userId: 'me',
@@ -99,7 +99,7 @@ async function emailProcessing() {
 }
 
 function getRandomInterval() {
-    return Math.random() * (120000 - 45000) + 45000;  // Random interval between 45 to 120 seconds
+    return Math.random() * (120000 - 45000) + 45000; 
 }
 
 module.exports = { emailProcessing };
